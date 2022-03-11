@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         '/TrafficSummary': (context) => TrafficSummaryScreen(),
         '/FromTo': (context) => FromTo(),
       },
-       home: const Splash(),
+      home: const Splash(),
       // home: FromTo(),
     );
   }
