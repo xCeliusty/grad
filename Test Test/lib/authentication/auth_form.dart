@@ -272,7 +272,7 @@ class _AuthFormState extends State<AuthForm> {
                                   .signInWithEmailAndPassword(
                                       email: _email, password: _password);
                               //Navigator.of(context).pushNamed(FromTo.routeName);
-                              Navigator.pushNamed(context, '/FromTo');
+                              Navigator.pushNamed(context, '/Query');
                               if (_email == "admin@admin.com" &&
                                   _password == "123456")
                                 Navigator.of(context).push(MaterialPageRoute(

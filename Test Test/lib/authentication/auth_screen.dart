@@ -1,5 +1,6 @@
 import 'package:busgo/admin/admin_screen.dart';
 import 'package:busgo/authentication/auth_form.dart';
+import 'package:busgo/screens/test.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: const AuthForm(),
+      body:  Query(),
     );
   }
 }
