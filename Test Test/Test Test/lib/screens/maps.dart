@@ -130,11 +130,11 @@ class MapFromToState extends State<FromTo> {
                         placeholder: 'Enter the location',
                         apiKey: Secrets.API_KEY,
                         iconColor:Colors.blueGrey,
-                        strictBounds :true,
+                        //strictBounds :true,
 
                         bgColor :Colors.blueGrey,
-                        //location: LatLng(30.033333, 31.233334),
-                      //  radius: 5000,
+                        location: LatLng(30.033333, 31.233334),
+                        radius: 70000,
                         onSelected: (Place place) async {
                           place1 = place.description!;
                           print(place);
@@ -151,7 +151,7 @@ class MapFromToState extends State<FromTo> {
                         placeholder: 'Enter the location',
                         apiKey: Secrets.API_KEY,
                         location: LatLng(30.033333, 31.233334),
-                        radius: 5000,
+                        radius: 70000,
                         strictBounds: true,
                         onSelected: (place) async {
                           //Geolocation? geolocation = await place.geolocation;
