@@ -41,8 +41,11 @@ class MyApp extends StatelessWidget {
         '/FromTo': (context) => FromTo(),
       },
      //home: const Splash(),
-      home: Calender(),
-     // home:FromTo()
+      //home: Calender(),
+    home:FromTo()
     );
   }
 }
+
+
+

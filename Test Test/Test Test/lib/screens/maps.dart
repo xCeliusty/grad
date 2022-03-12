@@ -5,10 +5,15 @@ import 'package:busgo/trackingdirectionsmap/locationservice.dart';
 import 'package:busgo/trackingdirectionsmap/secrets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places_hoc081098/flutter_google_places_hoc081098.dart';
+//import 'package:google_maps_webservice/directions.dart';
 
 import 'package:search_map_place_updated/search_map_place_updated.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../trackingdirectionsmap/secrets.dart';
+//import 'package:google_api_headers/google_api_headers.dart';
+//import 'package:google_maps_webservice/places.dart';
+
 //import 'package:flutter_google_places_hoc081098/flutter_google_places_hoc081098.dart';
 //import 'package:google_api_headers/google_api_headers.dart';
 //import 'package:google_maps_webservice/places.dart';
@@ -133,13 +138,47 @@ class MapFromToState extends State<FromTo> {
                         //strictBounds :true,
 
                         bgColor :Colors.blueGrey,
-                        location: LatLng(30.033333, 31.233334),
-                        radius: 70000,
+                        location: LatLng(30.057978,31.212652),
+                        radius: 181273 ,//608.52 2sto bil km ,544878.02  meter
                         onSelected: (Place place) async {
-                          place1 = place.description!;
+                         // place1 = place.description!;
+                         // print(place);
+                          if (place != null) {
+                        place1 = place.description!;
                           print(place);
+                        }
+
                         },
                       ),
+
+// Positioned(
+//             top: 20,
+//             child: InkWell(
+//               onTap: getPlaceService,
+//               child: Padding(
+//                 padding: const EdgeInsets.all(15),
+//                 child: Card(
+//                   child: Container(
+//                     padding: const EdgeInsets.all(0),
+//                     width: double.infinity,
+//                     child: ListTile(
+//                       title: Text(
+//                       'location',
+//                         style: const TextStyle(
+//                           fontSize: 18,
+//                         ),
+//                       ),
+//                       trailing: const Icon(Icons.search),
+//                       dense: true,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+
+                     
+
                       SearchMapPlaceWidget(
                         hasClearButton: true,
                         bgColor :Colors.blueGrey,
@@ -150,13 +189,16 @@ class MapFromToState extends State<FromTo> {
                         // controller: _originController,
                         placeholder: 'Enter the location',
                         apiKey: Secrets.API_KEY,
-                        location: LatLng(30.033333, 31.233334),
-                        radius: 70000,
-                        strictBounds: true,
+                        location: LatLng(30.057978,31.212652),//30.033333, 31.233334
+                        radius: 181273,
+                       // strictBounds: true,
                         onSelected: (place) async {
-                          //Geolocation? geolocation = await place.geolocation;
-                          place2 = place.description!;
+                       //   place2 = place.description!;
+                         // print(place);
+                          if (place != null) {
+                        place2 = place.description!;
                           print(place);
+                        }
 
                           // mapController.animateCamera(
                           //   CameraUpdate.newLatLng(geolocation!.coordinates));
@@ -333,4 +375,20 @@ class MapFromToState extends State<FromTo> {
     );
     _setMarker(LatLng(lat, lng));
   }
+
+  //  getPlaceService() async {
+    
+  //   var place = await PlacesAutocomplete.show(
+  //       context: context,
+  //       apiKey: Secrets.API_KEY,
+  //       mode: Mode.overlay,
+  //       types: [],
+  //      strictbounds: false,
+       
+  //      components: [Component(Component.country, 'Eg')],
+
+        
+      
+  //     ); 
+  //}
 }
