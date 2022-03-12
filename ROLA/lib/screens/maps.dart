@@ -11,6 +11,7 @@ import 'package:search_map_place_updated/search_map_place_updated.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../trackingdirectionsmap/secrets.dart';
+import '../drawer/drawer.dart';
 //import 'package:google_api_headers/google_api_headers.dart';
 //import 'package:google_maps_webservice/places.dart';
 
@@ -22,11 +23,13 @@ import '../trackingdirectionsmap/secrets.dart';
 //import 'package:permission_handler/permission_handler.dart';
 
 class FromTo extends StatefulWidget {
+  static const routeName = "/FromTo";
   @override
   State<FromTo> createState() => MapFromToState();
 }
 
 class MapFromToState extends State<FromTo> {
+  static const routeName = "/from-to";
   Completer<GoogleMapController> _controller = Completer();
   //TextEditingController _originController = TextEditingController();
   // TextEditingController _destinationController = TextEditingController();
@@ -113,6 +116,7 @@ class MapFromToState extends State<FromTo> {
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
+      drawer:AppDrawer(),
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(

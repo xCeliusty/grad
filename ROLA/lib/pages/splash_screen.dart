@@ -30,7 +30,7 @@ class SplashState extends State<Splash> {
     return const Scaffold(
       body: Center(
         child: Text(
-          'TRAFFIC PREDICTION',
+          'Fast Route',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
