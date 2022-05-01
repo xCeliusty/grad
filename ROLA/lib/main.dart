@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext 
+  context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -53,8 +54,8 @@ class MyApp extends StatelessWidget {
         '/Query': (context) => Query(),
 
       },
-       home: const Splash(),
-      // home: Query(),
+       //home: const Splash(),
+       home:  Editprofile(),
     );
   }
 }

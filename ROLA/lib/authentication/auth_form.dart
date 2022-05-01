@@ -64,10 +64,13 @@ class _AuthFormState extends State<AuthForm> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // const Icon(
-                  //   Icons.directions_bus,
-                  //   size: 50,
-                  // ),
+                  ClipRRect(
+                                  //borderRadius: new BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/app_logo.png',
+                                   // height: 50,
+                                  ),
+                                ),
                   if (!_login)
                     Padding(
                       padding: const EdgeInsets.all(8.0),

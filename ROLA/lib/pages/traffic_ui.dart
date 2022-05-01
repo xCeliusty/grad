@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import '../drawer/drawer.dart';
 
 class TrafficSummaryScreen extends StatelessWidget {
+  static const routeName = "/TrafficSummary'";
   const TrafficSummaryScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      drawer:AppDrawer(),
       appBar: AppBar(
         title: Text(
           "Traffic",

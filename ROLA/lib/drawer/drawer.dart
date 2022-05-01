@@ -27,7 +27,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text("Dashboard"),
             onTap: () {
               // Navigator.of(context).pushNamed(FromTo.routeName);
-              //Navigator.pushNamed(context, '/FromTo');
+              Navigator.pushNamed(context, '/FromTo');
             },
           ),
           ListTile(

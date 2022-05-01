@@ -293,7 +293,18 @@ class MapFromToState extends State<FromTo> {
                               ),
                             )
                           : Text(''),
-                    ),
+                    ),ButtonBar(
+                      children: [
+                        //  TextButton(onPressed: () {}, child: Text("Cancle")),
+                        ElevatedButton(
+                          onPressed: () async {
+                            Navigator.pushNamed(context, '/TrafficSummary');
+                          },
+                          child: Text("Confirm"),
+                        ),
+                      ],
+                    )
+                    
                     //   },
                   ],
                 ),

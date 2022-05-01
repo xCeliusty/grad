@@ -1,235 +1,217 @@
+import 'package:flutter/material.dart';
 import 'package:busgo/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 
+
 class Editprofile extends StatefulWidget {
   static const routeName = "/dashboard";
+  const Editprofile({Key? key}) : super(key: key);
+
 
   @override
   _EditprofileState createState() => _EditprofileState();
 }
-
 const routeName = "/Editprofile";
 
 class _EditprofileState extends State<Editprofile> {
+  var size,height,width;
   static const routeName = "/dashboard";
   @override
   Widget build(BuildContext context) {
+    // getting the size of the window
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
+ 
     return Scaffold(
-        drawer: AppDrawer(),
-        // backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text('Profile'),
-          backgroundColor: Colors.blueGrey,
-        ),
-
-        // backgroundColor: Color(0xff36344b),
-        body: Container(
-            decoration: new BoxDecoration(
-              color: Colors.white,
+      drawer: AppDrawer(),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('Edit Profile'),
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Container(
+        //decoration: BoxDecoration(color: Colors.green),
+        //margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
+        //height: height/2,//half of the height size
+       // width: width/2,
+       width:MediaQuery.of(context).size.width,
+       height:MediaQuery.of(context).size.height,
+        child: Column(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisSize: MainAxisSize.max,
+          children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: ClipRRect(
+                  borderRadius: new BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/person2.jpg',
+                    height: 80,
+                  ),
+                ),
+              ),
             ),
-            child: ListView(
+            //1
+            Column(
               children: [
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                  child: const ListTile(
-                    tileColor: Colors.blueGrey,
-                    title: Text(
-                      "Edit Profile",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Lora-VariableFont_wght',
-                        fontSize: 25,
-                        color: Color(0xffFFFFFF),
-                      ),
-                    ),
-                  ),
-                  elevation: 30,
-                  color: Color(0xff36344b),
-                  margin:
-                      EdgeInsets.only(bottom: 40, top: 60, left: 90, right: 90),
-                ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Name:',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: 'Lora-VariableFont_wght',
-                                  color: Colors.black)),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                  child: TextFormField(
-                                      cursorColor: Color(0XFFFFCCFF),
-                                      textAlign: TextAlign.center,
-                                      decoration: const InputDecoration(
-                                        border: null,
-                                        hintText: 'Edit your name',
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff6c6996),
-                                              width: 2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25)),
-                                        ),
-                                      ))),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 30,
-                      ),
-                      Row(
-                        children: [
-                          const Text('Email:',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: 'Lora-VariableFont_wght',
-                                  color: Colors.black)),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                  child: TextFormField(
-                                      cursorColor: Color(0XFFFFCCFF),
-                                      textAlign: TextAlign.center,
-                                      decoration: const InputDecoration(
-                                        border: null,
-                                        hintText: 'Edit your Email',
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff6c6996),
-                                              width: 2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25)),
-                                        ),
-                                      ))),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 30,
-                      ),
-                      Row(
-                        children: [
-                          const Text('ID:',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: 'Lora-VariableFont_wght',
-                                  color: Colors.black)),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                  child: TextFormField(
-                                      cursorColor: Color(0XFFFFCCFF),
-                                      textAlign: TextAlign.center,
-                                      decoration: const InputDecoration(
-                                        border: null,
-                                        hintText: 'Edit your ID',
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff6c6996),
-                                              width: 2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25)),
-                                        ),
-                                      ))),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 30,
-                      ),
-                      Row(
-                        children: [
-                          const Text('Password:',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: 'Lora-VariableFont_wght',
-                                  color: Colors.black)),
-                          Flexible(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                  child: TextFormField(
-                                      cursorColor: Color(0XFFFFCCFF),
-                                      textAlign: TextAlign.center,
-                                      decoration: const InputDecoration(
-                                        border: null,
-                                        hintText: 'Edit your password',
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff6c6996),
-                                              width: 2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25)),
-                                        ),
-                                      ))),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  padding: const EdgeInsets.only(right: 260),
+                  child: Text(
+                    'Name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                SizedBox(
-                  width: 50,
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blueGrey,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                      ),
-                      child: Text(
-                        'Discard',
-                        style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontSize: 30,
-                          fontFamily: 'Lora-VariableFont_wght',
-                        ),
-                      ),
+                TextField(
+                  readOnly: false,
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/third');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                        ),
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                            color: Color(0xffffffff),
-                            fontSize: 30,
-                            fontFamily: 'Lora-VariableFont_wght',
-                          ),
-                        ))
-                  ],
-                )
+                    // fillColor: Colors.white, //background of phonenumber
+                    //filled: true, // To set background to light grey
+                    hintText: "Enter Your Name",
+                  ),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    height: 0.01,
+
+                    //width:
+                  ),
+                ),
               ],
-            )));
+            ),
+            //2
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 260),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                TextField(
+                  readOnly: false,
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    fillColor: Colors.white,
+                    filled: true, // To set background to light grey
+                    hintText: "Add Your Email",
+                    suffixIcon: IconButton(
+                      onPressed: null,
+                      icon: Icon(Icons.create_outlined),
+                    ),
+                  ),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white),
+                ),
+              ],
+            ),
+            //3
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 200),
+                  child: Text(
+                    'Phone Number',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                TextField(
+                  readOnly: false,
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    fillColor: Colors.white,
+                    filled: true, // To set background to light grey
+                    hintText: "+201113534567",
+                    suffixIcon: IconButton(
+                      onPressed: null,
+                      icon: Icon(Icons.create_outlined),
+                    ),
+                  ),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white),
+                ),
+              ],
+            ),
+            //4
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 250),
+                  child: Text(
+                    'Language',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                TextField(
+                  readOnly: false,
+                  textAlign: TextAlign.left,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    fillColor: Colors.white,
+                    filled: true, // To set background to light grey
+                    hintText: "English",
+                    suffixIcon: IconButton(
+                      onPressed: null,
+                      icon: Icon(Icons.create_outlined),
+                    ),
+                  ),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white),
+                ),
+                ButtonBar(
+                  children: [
+                    //  TextButton(onPressed: () {}, child: Text("Cancle")),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigator.pushNamed(context, '/DriverDetails1');
+                        Navigator.pushNamed(context, '/FromTo');
+                      },
+                      child: Text("Confirm"),
+                    ),
+                  ],
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

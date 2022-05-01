@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 //import 'package:table_calendar/table_calendar.dart';
 import 'package:busgo/table_calendar.dart';
+import '../drawer/drawer.dart';
 
 import '../utils.dart';
 
@@ -86,6 +87,7 @@ class _CalenderState extends State<Calender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer:AppDrawer(),
       appBar: AppBar(
         title: Text('TableCalendar - Events'),
       ),
